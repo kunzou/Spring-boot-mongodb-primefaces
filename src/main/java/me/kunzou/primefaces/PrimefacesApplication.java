@@ -2,18 +2,14 @@ package me.kunzou.primefaces;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import javax.faces.webapp.FacesServlet;
 import javax.servlet.ServletContext;
 
 import java.util.Arrays;
 
-@Configuration
 @SpringBootApplication
-@ConditionalOnWebApplication
 public class PrimefacesApplication {
 
 	public static void main(String[] args) {

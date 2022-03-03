@@ -7,7 +7,6 @@ import org.primefaces.model.chart.LineChartSeries;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import me.kunzou.primefaces.service.DataService;
@@ -15,13 +14,13 @@ import me.kunzou.primefaces.service.DataService;
 @Component
 @ManagedBean
 @ViewScoped
-public class LineChartManagedBean {
+public class LineChartManagedBean extends BaseManagedBean {
 	@Autowired
 	private DataService dataService;
 	private LineChartModel lineModel;
 
-	@PostConstruct
-	public void init() {
+	@Override
+	protected void initBean() {
 		lineModel = new LineChartModel();
 		LineChartSeries s = new LineChartSeries();
 		s.setLabel("Population");
@@ -40,7 +39,6 @@ public class LineChartManagedBean {
 		x.setMax(7);
 		x.setTickInterval("1");
 		x.setLabel("Number of Years");
-
 	}
 
 	public LineChartModel getLineModel() {
